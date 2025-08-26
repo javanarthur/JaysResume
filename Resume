@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javan Adjei - CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-print-color-adjust: exact; /* Ensures colors print correctly in Chrome/Safari */
+            color-adjust: exact; /* Ensures colors print correctly in Firefox */
+        }
+        /* A custom class for the main accent color */
+        .accent-color {
+            color: #2d3748; /* A nice slate gray/blue */
+        }
+        /* Custom list styles for a cleaner look */
+        .custom-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        .custom-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #a0aec0; /* A lighter gray for the dash */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <!-- Header Section -->
+        <header class="bg-white p-8 border-b border-gray-200">
+            <h1 class="text-4xl sm:text-5xl font-bold accent-color">JAVAN ADJEI</h1>
+            <p class="text-lg text-gray-600 mt-1">Brand Strategist & UX/UI Designer | Front-End Developer</p>
+            <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
+                <a href="tel:07378803280" class="flex items-center hover:text-gray-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                    07378 803 280
+                </a>
+                <a href="mailto:javan.adjei@gmail.com" class="flex items-center hover:text-gray-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    javan.adjei@gmail.com
+                </a>
+                <a href="https://bamboomedia.group" target="_blank" class="flex items-center hover:text-gray-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9" /></svg>
+                    bamboomedia.group
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex flex-col md:flex-row">
+            <!-- Left Column -->
+            <aside class="w-full md:w-1/3 bg-gray-50 p-6 md:p-8 border-r border-gray-200">
+                <section>
+                    <h2 class="text-sm font-bold uppercase tracking-widest accent-color mb-4">Profile</h2>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Creative brand enthusiast and UX / Front-End Designer passionate about building human-centred, commercially strong experiences. Skilled in visual storytelling, brand strategy, digital product design, and front-end development across agency, in-house, and freelance roles.
+                    </p>
+                </section>
+                <section class="mt-8">
+                    <h2 class="text-sm font-bold uppercase tracking-widest accent-color mb-4">Skills & Technologies</h2>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <h3 class="font-semibold text-gray-700">Design & Strategy</h3>
+                            <ul class="mt-1 text-gray-600 list-disc list-inside">
+                                <li>Brand Strategy & Identity</li>
+                                <li>UX/UI Research & Design</li>
+                                <li>Visual Storytelling</li>
+                                <li>Wireframing & Prototyping</li>
+                                <li>Content Strategy</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-700">Development</h3>
+                             <ul class="mt-1 text-gray-600 list-disc list-inside">
+                                <li>JavaScript, HTML, CSS</li>
+                                <li>React, Vue</li>
+                                <li>C#, PHP</li>
+                                <li>Umbraco, WordPress</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-700">Tools & Platforms</h3>
+                             <ul class="mt-1 text-gray-600 list-disc list-inside">
+                                <li>Adobe Creative Suite</li>
+                                <li>Figma, Sketch</li>
+                                <li>Webflow, WordPress</li>
+                                <li>Google Analytics (basic)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="mt-8">
+                    <h2 class="text-sm font-bold uppercase tracking-widest accent-color mb-4">Education</h2>
+                    <p class="text-sm font-semibold text-gray-700">BA (Hons) Graphic and Media Design</p>
+                    <p class="text-sm text-gray-600">University of the Arts London (UAL)</p>
+                </section>
+            </aside>
+            
+            <!-- Right Column -->
+            <div class="w-full md:w-2/3 p-6 md:p-8">
+                <section>
+                    <h2 class="text-sm font-bold uppercase tracking-widest accent-color mb-4">Experience</h2>
+                    <div class="space-y-6">
+                        <!-- Job Entry -->
+                        <div class="text-sm">
+                            <h3 class="font-bold text-base text-gray-800">Brand & UX Designer</h3>
+                            <p class="font-semibold text-gray-600">Bamboo Media Group – London, UK</p>
+                            <p class="text-xs text-gray-500 mb-2">2023 – Present</p>
+                            <ul class="custom-list text-gray-700 leading-relaxed">
+                                <li>Lead brand strategy, identity design, and UX initiatives for lifestyle and hospitality brands.</li>
+                                <li>Deliver user-first website experiences aligned with commercial goals.</li>
+                                <li>Facilitate brand workshops and UX audits.</li>
+                            </ul>
+                        </div>
+                        <!-- Job Entry -->
+                        <div class="text-sm">
+                            <h3 class="font-bold text-base text-gray-800">Senior UX Designer</h3>
+                            <p class="font-semibold text-gray-600">Naked Creativity – London, UK</p>
+                            <p class="text-xs text-gray-500 mb-2">2022 – 2023</p>
+                            <ul class="custom-list text-gray-700 leading-relaxed">
+                                <li>Designed websites, branding, and print collateral.</li>
+                                <li>Created UX wireframes and optimised site journeys.</li>
+                            </ul>
+                        </div>
+                        <!-- Job Entry -->
+                        <div class="text-sm">
+                            <h3 class="font-bold text-base text-gray-800">Front-End Developer</h3>
+                            <p class="font-semibold text-gray-600">Visarc – London, UK</p>
+                            <p class="text-xs text-gray-500 mb-2">2021 – 2022</p>
+                            <ul class="custom-list text-gray-700 leading-relaxed">
+                                <li>Built responsive websites with HTML, CSS, JavaScript, and Umbraco CMS.</li>
+                                <li>Developed reusable components with React and Vue.</li>
+                                <li>Collaborated with designers to deliver UX-optimised, accessible digital platforms.</li>
+                                <li>Created responsive HTML email templates for Piaggio, Vespa, and Maserati.</li>
+                            </ul>
+                        </div>
+                        <!-- Job Entry -->
+                        <div class="text-sm">
+                            <h3 class="font-bold text-base text-gray-800">Front-End & Email Developer</h3>
+                            <p class="font-semibold text-gray-600">Freelance – London, UK</p>
+                            <p class="text-xs text-gray-500 mb-2">2020 – 2021</p>
+                            <ul class="custom-list text-gray-700 leading-relaxed">
+                                <li>Delivered front-end development for O2, Experian, and M&C Saatchi.</li>
+                                <li>Developed UX-focused websites and landing pages for clients across industries.</li>
+                            </ul>
+                        </div>
+                         <!-- Job Entry -->
+                        <div class="text-sm">
+                            <h3 class="font-bold text-base text-gray-800">UX Designer / Front-End Developer</h3>
+                            <p class="font-semibold text-gray-600">TotalJobs – London, UK</p>
+                            <p class="text-xs text-gray-500 mb-2">2019 – 2020</p>
+                            <ul class="custom-list text-gray-700 leading-relaxed">
+                                <li>Designed recruiter-focused wireframes and page templates.</li>
+                                <li>Supported internal communication assets and UX improvements.</li>
+                                <li>Provided UX support for Milkround and TotalJobs recruitment campaigns.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="mt-8">
+                    <h2 class="text-sm font-bold uppercase tracking-widest accent-color mb-4">Selected Projects</h2>
+                     <div class="space-y-4 text-sm">
+                        <div>
+                            <h3 class="font-bold text-gray-800">British Music Hall Society – UI Redesign & Brand Refresh</h3>
+                            <p class="text-gray-600">Modernised logo and delivered a complete UI overhaul.</p>
+                            <a href="http://bmhs.naked.dev" target="_blank" class="text-blue-600 hover:underline">bmhs.naked.dev</a>
+                        </div>
+                         <div>
+                            <h3 class="font-bold text-gray-800">Elbit Systems UK – E-commerce Platform</h3>
+                            <p class="text-gray-600">Designed and developed a bespoke e-commerce platform.</p>
+                        </div>
+                         <div>
+                            <h3 class="font-bold text-gray-800">Love Ashford Council Website</h3>
+                            <p class="text-gray-600">Developed frontend for a major council initiative.</p>
+                            <a href="https://loveashford.com" target="_blank" class="text-blue-600 hover:underline">loveashford.com</a>
+                        </div>
+                         <div>
+                            <h3 class="font-bold text-gray-800">Secret Curves – Responsive E-commerce Site</h3>
+                            <p class="text-gray-600">Built a fully responsive e-commerce experience from the ground up.</p>
+                            <a href="https://secretcurvesonline.com" target="_blank" class="text-blue-600 hover:underline">secretcurvesonline.com</a>
+                        </div>
+                         <div>
+                            <h3 class="font-bold text-gray-800">Maserati – Email Campaigns</h3>
+                            <p class="text-gray-600">Designed and coded responsive marketing emails.</p>
+                        </div>
+                     </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
