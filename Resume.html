@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javan Adjei - CV</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,7 +36,15 @@
     </style>
 </head>
 <body class="bg-gray-100 p-4 sm:p-8">
-    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+    <!-- This container holds the download button and will not be part of the PDF -->
+    <div class="max-w-4xl mx-auto mb-4 text-center print:hidden">
+        <button id="download-pdf" class="bg-slate-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-slate-800 transition-colors disabled:opacity-50">
+            Download PDF
+        </button>
+    </div>
+
+    <!-- This is the CV content that will be converted to PDF -->
+    <div id="cv-content" class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         <!-- Header Section -->
         <header class="bg-white p-6 border-b border-gray-200">
             <h1 class="text-4xl font-bold accent-color">JAVAN ADJEI</h1>
@@ -62,7 +72,7 @@
                 <section>
                     <h2 class="text-xs font-bold uppercase tracking-widest accent-color mb-3">Profile</h2>
                     <p class="text-sm text-gray-600 leading-normal">
-                        Creative brand enthusiast and UX / Front-End Designer passionate about building human-centred, commercially strong experiences. Skilled in visual storytelling, brand strategy, digital product design, and front-end development across agency, in-house, and freelance roles.
+                        A brand enthusiast and designer with over a decade of experience shaping human-centred digital products. My passion lies in blending visual storytelling and UX with front-end development to build commercially strong experiences. After successfully leading my own agency, I am now seeking a focused, permanent role that allows me to dedicate my energy to high-impact projects while preserving valuable time for my young family.
                     </p>
                 </section>
                 <section class="mt-6">
@@ -112,7 +122,7 @@
                     <div class="space-y-5">
                         <!-- Job Entry -->
                         <div class="text-sm">
-                            <h3 class="font-bold text-base text-gray-800">Brand & UX Designer</h3>
+                            <h3 class="font-bold text-base text-gray-800">Founder / Creative Director</h3>
                             <p class="font-semibold text-gray-600">Bamboo Media Group – London, UK</p>
                             <p class="text-xs text-gray-500 mb-1">2023 – Present</p>
                             <ul class="custom-list text-gray-700 leading-normal text-sm">
@@ -166,7 +176,8 @@
                         </div>
                     </div>
                 </section>
-                <section class="mt-6">
+                <!-- Added significant top padding (pt-48) to force this section onto a new page -->
+                <section class="pt-48">
                     <h2 class="text-xs font-bold uppercase tracking-widest accent-color mb-3">Selected Projects</h2>
                      <div class="space-y-3 text-sm">
                         <div>
@@ -194,5 +205,71 @@
             </div>
         </main>
     </div>
+
+    <script>
+        // This script handles the PDF generation
+        document.getElementById('download-pdf').addEventListener('click', function () {
+            const downloadBtn = this;
+            const cvContent = document.getElementById('cv-content');
+            const { jsPDF } = window.jspdf;
+
+            // Add a loading state to the button
+            downloadBtn.disabled = true;
+            downloadBtn.textContent = 'Generating...';
+
+            // Use html2canvas to render the element as a canvas
+            html2canvas(cvContent, {
+                scale: 2, // Increase scale for better quality
+                useCORS: true,
+                logging: false // Suppress logs for cleaner console
+            }).then(canvas => {
+                const pdf = new jsPDF({
+                    orientation: 'p',
+                    unit: 'mm',
+                    format: 'a4'
+                });
+                
+                const pageWidth = pdf.internal.pageSize.getWidth();
+                const pageHeight = pdf.internal.pageSize.getHeight();
+                
+                const canvasWidth = canvas.width;
+                const canvasHeight = canvas.height;
+                const canvasAspectRatio = canvasHeight / canvasWidth;
+
+                // Calculate the height of the image on the PDF page to maintain aspect ratio
+                const imgHeight = pageWidth * canvasAspectRatio;
+                let heightLeft = imgHeight;
+                let position = 0;
+                let page = 1;
+
+                // Add the first page
+                pdf.addImage(canvas, 'PNG', 0, position, pageWidth, imgHeight);
+                heightLeft -= pageHeight;
+
+                // Add new pages if the content is taller than one page
+                while (heightLeft > 0) {
+                    position = -pageHeight * page;
+                    pdf.addPage();
+                    pdf.addImage(canvas, 'PNG', 0, position, pageWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                    page++;
+                }
+                
+                // Generate the PDF as a blob
+                const pdfBlob = pdf.output('blob');
+                // Create a URL for the blob
+                const pdfUrl = URL.createObjectURL(pdfBlob);
+                // Open the URL in a new tab. The browser's PDF viewer will handle it.
+                window.open(pdfUrl, '_blank');
+
+            }).catch(err => {
+                console.error("Failed to generate PDF:", err);
+            }).finally(() => {
+                // This block ensures the button is re-enabled after the process completes or fails
+                downloadBtn.disabled = false;
+                downloadBtn.textContent = 'Download PDF';
+            });
+        });
+    </script>
 </body>
 </html>
